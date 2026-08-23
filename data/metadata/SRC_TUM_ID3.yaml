@@ -1,0 +1,142 @@
+source_id: SRC_TUM_ID3
+source_title: TUM Volkswagen ID.3 multiscale dataset
+doi_or_identifier: 10.14459/2022mp1656314
+official_source: https://mediatum.ub.tum.de/1656314
+retrieval_date: 2026-08-20
+version: Published 2022-04-21
+licence: CC BY 4.0
+acquisition_method: Official mediaTUM public FTP individual-file endpoints
+transformation_status: RAW_UNMODIFIED
+files:
+  - original_filename: Data.sha512
+    official_reference: "https://mediatum.ub.tum.de/1656314 | Data.sha512"
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 113180
+    scientific_role: Official SHA-512 integrity manifest
+    raw_relative_path: data/raw/SRC_TUM_ID3/Data.sha512
+    sha256: 518D443ED1570ECDB6636DD676DF37DD2E3D5BE8EC99D735621D136458E66C5B
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: Cell_Drawing.pdf
+    official_reference: "https://mediatum.ub.tum.de/1656314 | Data/02_Battery/01_CAD/Cell_Drawing.pdf"
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 66337
+    scientific_role: Cell architecture and dimensions
+    raw_relative_path: data/raw/SRC_TUM_ID3/Data/02_Battery/01_CAD/Cell_Drawing.pdf
+    sha256: 8F5B0B096F5049E1FEBAA85F3558B5D478C33768681AA63DEE7D68175E939C05
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: Energy_density.xlsx
+    official_reference: "https://mediatum.ub.tum.de/1656314 | Data/02_Battery/01_CAD/Energy_density.xlsx"
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 18100
+    scientific_role: Cell-to-pack energy-density and scale documentation
+    raw_relative_path: data/raw/SRC_TUM_ID3/Data/02_Battery/01_CAD/Energy_density.xlsx
+    sha256: 021A524A157B1851DF97100468229A69A91A95FE3072F8236392AE43120323E3
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: Module_Drawing.pdf
+    official_reference: "https://mediatum.ub.tum.de/1656314 | Data/02_Battery/01_CAD/Module_Drawing.pdf"
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 30811
+    scientific_role: Module architecture documentation
+    raw_relative_path: data/raw/SRC_TUM_ID3/Data/02_Battery/01_CAD/Module_Drawing.pdf
+    sha256: D8E161CB88EF68880423359ECD474BE47B8C5464207F1CDEB24D1C743F429726
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: Pack_Drawing.pdf
+    official_reference: "https://mediatum.ub.tum.de/1656314 | Data/02_Battery/01_CAD/Pack_Drawing.pdf"
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 41980
+    scientific_role: Pack architecture documentation
+    raw_relative_path: data/raw/SRC_TUM_ID3/Data/02_Battery/01_CAD/Pack_Drawing.pdf
+    sha256: B278A0F87D4FA616BBBDB71ECFD317F87DADCCD8BFB784B718698D9B7955B290
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: VW_78Ah_1584_pOCV_C10_20deg.mat
+    official_reference: "https://mediatum.ub.tum.de/1656314 | Data/02_Battery/04_OCV/VW_78Ah_1584_pOCV_C10_20deg.mat"
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 1599437
+    scientific_role: Compact 20-degC OCV/SOC context
+    raw_relative_path: data/raw/SRC_TUM_ID3/Data/02_Battery/04_OCV/VW_78Ah_1584_pOCV_C10_20deg.mat
+    sha256: C434F81B276A9F13E35DB92176754B10142A5A934069E9A7F1C74F9939A53081
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: VW_78Ah_1794_HPPC_3C_9steps_20deg.mat
+    official_reference: "https://mediatum.ub.tum.de/1656314 | Data/02_Battery/06_HPPC/VW_78Ah_1794_HPPC_3C_9steps_20deg.mat"
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 22791721
+    scientific_role: Room-temperature nine-step 3C HPPC/DC validation
+    raw_relative_path: data/raw/SRC_TUM_ID3/Data/02_Battery/06_HPPC/VW_78Ah_1794_HPPC_3C_9steps_20deg.mat
+    sha256: 971C29B586025C30538EDE29BA91A42B661AF96E736A8E5F7BDF5EDF9D070566
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: VW_78Ah_1828_HPPC_3C_9steps_0deg.mat
+    official_reference: "https://mediatum.ub.tum.de/1656314 | Data/02_Battery/06_HPPC/VW_78Ah_1828_HPPC_3C_9steps_0deg.mat"
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 22887812
+    scientific_role: Cold nine-step 3C HPPC/DC validation bound
+    raw_relative_path: data/raw/SRC_TUM_ID3/Data/02_Battery/06_HPPC/VW_78Ah_1828_HPPC_3C_9steps_0deg.mat
+    sha256: 7A4E61A7F2F8EE9898D1444A365E561F94884E987BB09D06917298384DD280A6
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: VW_78Ah_1856_HPPC_3C_9steps_40deg.mat
+    official_reference: "https://mediatum.ub.tum.de/1656314 | Data/02_Battery/06_HPPC/VW_78Ah_1856_HPPC_3C_9steps_40deg.mat"
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 22784679
+    scientific_role: Warm nine-step 3C HPPC/DC validation bound
+    raw_relative_path: data/raw/SRC_TUM_ID3/Data/02_Battery/06_HPPC/VW_78Ah_1856_HPPC_3C_9steps_40deg.mat
+    sha256: D4E56E38FF7226E228CA0995F9B3ADC3C369CEC4AC9E358BE280B6844B8515CF
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: VW_78Ah_1794_HPPC_3C_9steps_20deg.csv
+    acquisition_stage: P11R
+    official_reference: "ftp://dataserv.ub.tum.de/Data/02_Battery/06_HPPC/VW_78Ah_1794_HPPC_3C_9steps_20deg.csv | mediaTUM 1656314"
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 309132602
+    scientific_role: Official CSV representation of the selected 20-degC HPPC test; not an independent observation
+    raw_relative_path: data/raw/SRC_TUM_ID3/Data/02_Battery/06_HPPC/VW_78Ah_1794_HPPC_3C_9steps_20deg.csv
+    sha256: 5923B69923143247C052F5EE1C6AAFF4E3A9120852FDB1527AB77242C9AC622B
+    author_manifest_sha512: 57c244da895ac015623aa78c4b8d04cfe7a2081a0e915622a53a296be851701f903c3070596f99740bb331a83e6ce3dee78848bd3d0b2b96ee09048a4e96fc85
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: VW_78Ah_1828_HPPC_3C_9steps_0deg.csv
+    acquisition_stage: P11R
+    official_reference: "ftp://dataserv.ub.tum.de/Data/02_Battery/06_HPPC/VW_78Ah_1828_HPPC_3C_9steps_0deg.csv | mediaTUM 1656314"
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 311521011
+    scientific_role: Official CSV representation of the selected 0-degC HPPC test; not an independent observation
+    raw_relative_path: data/raw/SRC_TUM_ID3/Data/02_Battery/06_HPPC/VW_78Ah_1828_HPPC_3C_9steps_0deg.csv
+    sha256: 39C7597A80455384FE54578AD80F5B299CA301AD372FC49B7692AC6B7E96CDE2
+    author_manifest_sha512: 075a4ff3462f9163a4946d8029037ab5ec0c66ae6249be4fba5b26533d51c49a9e6f24362a8cc530dd0f37dac34c77e1b2840a97aed54a7e35653c1fb6ca34ff
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: VW_78Ah_1856_HPPC_3C_9steps_40deg.csv
+    acquisition_stage: P11R
+    official_reference: "ftp://dataserv.ub.tum.de/Data/02_Battery/06_HPPC/VW_78Ah_1856_HPPC_3C_9steps_40deg.csv | mediaTUM 1656314"
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 309592964
+    scientific_role: Official CSV representation of the selected 40-degC HPPC test; not an independent observation
+    raw_relative_path: data/raw/SRC_TUM_ID3/Data/02_Battery/06_HPPC/VW_78Ah_1856_HPPC_3C_9steps_40deg.csv
+    sha256: 5176752A1010DAAD637396307966D454E331B127BA0CFE5DFF09FB33F9676EBE
+    author_manifest_sha512: 7c17acae72f37061d2060dd79a7a9302a3a2465731286b759623b712e23a91ae4e0ab28cbc926953dc99e8791e7b18c3da2dd9c326931673a2ed572c6c8d28d3
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: Postprocess.m
+    official_reference: "https://mediatum.ub.tum.de/1656314 | Data/03_Vehicle/01_Characteristics/Postprocess.m"
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 7152
+    scientific_role: Author vehicle-characteristics interpretation aid
+    raw_relative_path: data/raw/SRC_TUM_ID3/Data/03_Vehicle/01_Characteristics/Postprocess.m
+    sha256: 0D0674707526DECF420CDD94FB4475B991706AA58F79DAE63BCF155A6A4D8588
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: WLTP.csv
+    official_reference: "https://mediatum.ub.tum.de/1656314 | Data/03_Vehicle/06_Cycles/02_Standard_Driving/WLTP/WLTP.csv"
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 277467865
+    scientific_role: Representative WLTP vehicle and HV-battery energy-flow trace
+    raw_relative_path: data/raw/SRC_TUM_ID3/Data/03_Vehicle/06_Cycles/02_Standard_Driving/WLTP/WLTP.csv
+    sha256: 885552AA9E7C788C83B520BF3C02655F9EC804DF286B651EAA89235E747BFB65
+    transformation_status: RAW_UNMODIFIED

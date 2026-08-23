@@ -1,0 +1,23 @@
+source_id: SRC_CAMBIUM_LRMER_2023
+source_title: Long-Run Marginal Emission Rates for Electricity - Workbooks for 2023 Cambium Data
+authors_or_institution: Pieter Gagnon / National Renewable Energy Laboratory
+doi_or_identifier: 10.7799/2305481
+official_source: https://data.nlr.gov/submissions/230
+retrieval_date: 2026-08-20
+version: Version 1 workbook
+licence: NREL dataset license; attribution required; data provided as-is
+chemistry: NOT APPLICABLE
+geography: 18 GEA regions in the contiguous United States
+temporal_scope: Prospective Cambium 2023 scenarios
+measurement_or_system_level: Long-run marginal emission-rate workbook
+original_units: DOCUMENTED IN SOURCE WORKBOOK
+acquisition_method: Official NLR Data Catalog direct download
+transformation_status: RAW_UNMODIFIED
+mandatory_label: Cambium-2023 LRMER sensitivity
+forbidden_label: Cambium-2024 marginal emissions
+files:
+  - original_filename: 1707947178-Cambium23_LRMER_GEAregions_0.xlsx
+    file_size_bytes: 17363130
+    raw_relative_path: data/raw/SRC_CAMBIUM_LRMER_2023/1707947178-Cambium23_LRMER_GEAregions_0.xlsx
+    sha256: E4C0CDB757C4CDA608D41333614E1FB7DAD4480D446A8616F6AFB9F671A8D722
+

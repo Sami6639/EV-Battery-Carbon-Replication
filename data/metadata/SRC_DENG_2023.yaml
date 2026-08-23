@@ -1,0 +1,18 @@
+source_id: SRC_DENG_2023
+identity: Deng et al. 2023, Prognostics of battery capacity based on charging data and data-driven methods for on-road vehicles
+article_doi: 10.1016/j.apenergy.2023.120954
+repository: https://github.com/BatICM/battery-charging-data-of-on-road-electric-vehicles
+commit: 36fef4bd99f626561e2d138a40ccff3d1f3ddfc2
+license: MIT
+retrieval_date: 2026-08-21
+chemistry: CATL NCM
+level: 20 BAIC EU500 vehicle packs; 145 Ah; 90 series cells; 32 temperature sensors
+observation_span: approximately 29 months
+role: OPEN_FIELD_CAPACITY_VALIDATION
+acquisition: 20 official RAR archives, source code, supplement, figures, license and README
+coverage_limit: charging events only; parked exposure and continuous duty are not observed
+source_pipeline: segment at timestamp gaps >10 s; reject <100 rows and SOC anomalies; integrate current and normalize by SOC interval; forward-fill where current missing <=10%
+environment_difference: pinned source imports removed scipy.integrate.trapz and undeclared optional packages; compatibility wrapper changes environment only and preserves scientific extraction functions
+prohibited_roles: [BLAST tuning, resistance trajectory, parked-state reconstruction]
+reproduction_status: NOT EXACT / NOT COMPLETED
+compatibility_attempt: 20 archives attempted; stopped CPU-active at 45-minute audit cutoff; no partial output accepted

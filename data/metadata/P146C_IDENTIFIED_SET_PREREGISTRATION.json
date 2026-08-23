@@ -1,0 +1,357 @@
+{
+  "schema_version": "1.0.0",
+  "stage": "P14.6C",
+  "architecture_status": "OPTION B — TRAJECTORY-FREE STATE-CONDITIONED ROBUST / PARTIAL-IDENTIFICATION ARCHITECTURE",
+  "approval_status": "APPROVED_CHANGE_CONTROL",
+  "architecture_roles": {
+    "primary": "S2_ROBUST_DOMINANCE_MECHANISTIC_SET_IDENTIFICATION",
+    "supporting": "S1_SYMMETRIC_POLICY_ACCOUNTING_AND_ENDPOINT_BOUND_CONSTRUCTION_ONLY",
+    "trajectory_optimization": "SUPERSEDED_PROSPECTIVELY"
+  },
+  "research_questions": {
+    "historical_primary_status": "SUPERSEDED BY APPROVED METHODOLOGICAL REVISION",
+    "revised_primary_status": "REVISED PRIMARY RQ — LOCKED",
+    "revised_primary": "Conditional on an empirically admissible current battery capacity–resistance state, under what combinations of remaining vehicle service, replacement-battery embodied emissions, and temporal charging-grid and battery-manufacturing pathways is immediate battery replacement robustly carbon-better, robustly carbon-worse, or indeterminate when future degradation paths are unidentified?",
+    "revised_sub_rq1": "What lower and upper bounds can be placed on the life-cycle-GHG contrast between immediate battery replacement and continued first-life use, conditional on an empirically admissible current capacity–resistance state and residual mobility service, without assuming a real-world degradation trajectory?",
+    "revised_sub_rq2": "How do the current usable-capacity and pulse-resistance states, evaluated against the required mobility and power service, determine whether continued first-life use and immediate replacement are technically admissible before carbon comparison?",
+    "revised_sub_rq3": "How do residual vehicle service and temporal charging-grid and replacement-battery manufacturing decarbonization widen, narrow, or change the sign classification of the identified life-cycle-GHG interval?"
+  },
+  "estimand": {
+    "name": "DeltaG",
+    "symbolic_definition": "DeltaG(z, theta_R, theta_C) = G_R(z, theta_R) - G_C(z, theta_C)",
+    "policy_R": "IMMEDIATE_REPLACEMENT",
+    "policy_C": "CONTINUED_FIRST_LIFE_USE",
+    "z": "MATCHED_EXOGENOUS_DECISION_CONTEXT",
+    "theta_R_membership": "theta_R in Theta_R",
+    "theta_C_membership": "theta_C in Theta_C",
+    "probability_interpretation": "NONE",
+    "identification_type": "MECHANISTIC SET IDENTIFICATION"
+  },
+  "identified_interval": {
+    "lower": "lower_DeltaG(z) = inf over admissible Theta(z) of DeltaG(z, theta_R, theta_C)",
+    "upper": "upper_DeltaG(z) = sup over admissible Theta(z) of DeltaG(z, theta_R, theta_C)",
+    "calculated_in_p146c": false
+  },
+  "sign_convention": {
+    "positive": "IMMEDIATE_REPLACEMENT_HAS_HIGHER_LIFECYCLE_GHG_THAN_CONTINUATION",
+    "negative": "IMMEDIATE_REPLACEMENT_HAS_LOWER_LIFECYCLE_GHG_THAN_CONTINUATION",
+    "zero": "POLICY_GHG_EQUALITY_AT_THE_EVALUATED_TREATMENT"
+  },
+  "primary_carbon_classifications": [
+    {
+      "condition": "lower_DeltaG > 0",
+      "label": "ROBUST CONTINUE"
+    },
+    {
+      "condition": "upper_DeltaG < 0",
+      "label": "ROBUST REPLACE"
+    },
+    {
+      "condition": "lower_DeltaG <= 0 <= upper_DeltaG",
+      "label": "CARBON DECISION INDETERMINATE"
+    }
+  ],
+  "optional_nonrecommendation_qualifier": {
+    "label": "POTENTIALLY BENEFICIAL",
+    "condition": "SOME_ADMISSIBLE_REPLACEMENT_CONTRASTS_ARE_NEGATIVE_BUT_ROBUST_REPLACE_IS_NOT_ESTABLISHED",
+    "recommendation_status": "NOT_A_REPLACEMENT_RECOMMENDATION"
+  },
+  "technical_classifications": [
+    "CONTINUE TECHNICALLY FEASIBLE",
+    "CONTINUE TECHNICALLY INFEASIBLE",
+    "REPLACEMENT TECHNICALLY FEASIBLE",
+    "REPLACEMENT TECHNICALLY INFEASIBLE",
+    "STATE OUTSIDE DECISION DOMAIN"
+  ],
+  "technical_carbon_separation": "TECHNICALLY_REQUIRED_REPLACEMENT_DOES_NOT_IMPLY_ROBUST_REPLACE",
+  "current_state_admissibility": {
+    "required": [
+      "PHYSICAL_RECONSTRUCTED_CAPACITY_RETENTION",
+      "SUPPORTED_PRIMARY_R10_STATE_OR_ENVELOPE",
+      "SEPARATE_R1S_ALTERNATIVE_WHERE_AVAILABLE",
+      "COMPATIBLE_SOC",
+      "COMPATIBLE_REFERENCE_TEMPERATURE",
+      "P12_DOMAIN_VALID",
+      "P13_TRANSLATION_DOMAIN_VALID"
+    ],
+    "time_to_state_used": false,
+    "experimental_elapsed_day_as_vehicle_age": false,
+    "unsupported_state_action": "STATE OUTSIDE DECISION DOMAIN"
+  },
+  "empirically_admissible_current_state_definition": {
+    "meaning": "A_CAPACITY_RESISTANCE_COMBINATION_INSIDE_THE_VALIDATED_P12_P13_PHYSICAL_EVIDENCE_DOMAIN",
+    "does_not_mean": [
+      "REPRESENTATIVE_FLEET_FREQUENCY",
+      "PROBABILITY_OF_OBSERVING_THE_STATE",
+      "TYPICAL_REAL_VEHICLE_STATE_AT_A_GIVEN_AGE"
+    ],
+    "vehicle_specific_case_requirement": "SEPARATE_COMPATIBLE_CURRENT_STATE_MEASUREMENT"
+  },
+  "theta_C": {
+    "policy": "CONTINUED_FIRST_LIFE_USE",
+    "endpoint_treatments": [
+      {
+        "id": "C_LOW",
+        "rule": "HOLD_CURRENT_ADMISSIBLE_DEGRADATION_STATE_CONSTANT_OVER_MATCHED_RESIDUAL_SERVICE",
+        "interpretation": "OPTIMISTIC_OPERATIONAL_PENALTY_BOUND",
+        "predicted_trajectory": false
+      },
+      {
+        "id": "C_HIGH",
+        "rule": "ALLOW_WORST_TECHNICALLY_FEASIBLE_P12_P13_SUPPORTED_DEGRADATION_ENERGY_STATE_UNDER_THE_SAME_CHEMISTRY_AND_REFERENCE_ARCHITECTURE",
+        "interpretation": "PESSIMISTIC_OPERATIONAL_PENALTY_BOUND",
+        "predicted_trajectory": false
+      }
+    ]
+  },
+  "theta_R": {
+    "policy": "IMMEDIATE_REPLACEMENT",
+    "endpoint_treatments": [
+      {
+        "id": "R_LOW",
+        "rule": "HOLD_FRESH_REFERENCE_REPLACEMENT_STATE_CONSTANT_OVER_MATCHED_RESIDUAL_SERVICE",
+        "interpretation": "OPTIMISTIC_OPERATIONAL_PENALTY_BOUND",
+        "predicted_trajectory": false
+      },
+      {
+        "id": "R_HIGH",
+        "rule": "ALLOW_THE_SAME_SCIENTIFICALLY_ADMISSIBLE_WORST_STATE_RULES_AS_CONTINUATION_SUBJECT_TO_CHEMISTRY_AND_SYSTEM_COMPATIBILITY",
+        "interpretation": "PESSIMISTIC_OPERATIONAL_PENALTY_BOUND",
+        "predicted_trajectory": false
+      }
+    ]
+  },
+  "symmetry_rules": {
+    "status": "HARD_GATE",
+    "rule": "FUTURE_STATE_UNCERTAINTY_TREATMENT_MUST_BE_POLICY_SYMMETRIC_UNLESS_A_PHYSICAL_DIFFERENCE_IS_PRE_SPECIFIED_AND_JUSTIFIED",
+    "forbidden_only_comparisons": [
+      "FRESH_FOREVER_REPLACEMENT_VERSUS_WORST_STATE_FOREVER_CONTINUATION",
+      "WORST_STATE_FOREVER_REPLACEMENT_VERSUS_CURRENT_STATE_FOREVER_CONTINUATION"
+    ],
+    "asymmetry_requirement": "EXPLICIT_PRE_RESULT_SCIENTIFIC_JUSTIFICATION"
+  },
+  "joint_theta": {
+    "name": "Theta(z)",
+    "definition": "ADMISSIBLE_JOINT_POLICY_STATE_SET_CONDITIONAL_ON_MATCHED_EXOGENOUS_CONTEXT_z",
+    "rules": [
+      "PRESERVE_CHEMISTRY_SYSTEM_AND_REFERENCE_CONDITION_COMPATIBILITY",
+      "PRESERVE_SHARED_EXOGENOUS_CONTEXT_ACROSS_POLICIES",
+      "EXCLUDE_MUTUALLY_INCOMPATIBLE_POLICY_STATE_COMBINATIONS",
+      "DO_NOT_CROSS_MATCH_EXOGENOUS_CORNERS_TO_MAXIMIZE_INTERVAL_WIDTH",
+      "DO_NOT_ASSUME_A_CARTESIAN_PRODUCT_WHEN_SCIENTIFIC_COUPLING_IS_REQUIRED",
+      "FAIL_CLOSED_WHEN_COMPATIBILITY_CANNOT_BE_ESTABLISHED"
+    ]
+  },
+  "shared_exogenous_context": [
+    "DECISION_CALENDAR_YEAR",
+    "CURRENT_VEHICLE_AGE",
+    "MILEAGE_AND_RESIDUAL_SERVICE_TREATMENT",
+    "VEHICLE_SURVIVAL_TREATMENT",
+    "CHARGING_CONVERSION_SCENARIO",
+    "GRID_PATHWAY_AND_GEOGRAPHY",
+    "TECHNICAL_SERVICE_DEFINITION",
+    "LOGICALLY_SHARED_MANUFACTURING_CONTEXT",
+    "2050_OPERATIONAL_TRUNCATION"
+  ],
+  "policy_accounting": {
+    "original_battery_manufacturing": "INCLUDED_ONCE_IN_TOTAL_LCA_AND_COMMON_INVARIANT_IN_DeltaG",
+    "replacement_battery_manufacturing": "POLICY_R_ONLY_REPLACEMENT_PACK_CAPACITY_TIMES_CALENDAR_YEAR_LLAMAS_PACK_GHG_FACTOR",
+    "second_life_credit": "NONE",
+    "post_vehicle_retirement_replacement_service": "NONE"
+  },
+  "operational_energy_rules": {
+    "capacity_role": "USABLE_ENERGY_AND_RANGE_FEASIBILITY_ONLY",
+    "resistance_role": "P13_INCREMENTAL_AGEING_SENSITIVE_RESISTIVE_ENERGY_PENALTY",
+    "direct_capacity_to_traction_energy_scaling": false,
+    "direct_percent_resistance_to_percent_vehicle_energy_scaling": false,
+    "charging_boundary": "L2_BATTERY_SIDE_TO_L3_GRID_SIDE_USING_P14_CONVERSION_WITHOUT_DOUBLE_COUNTING"
+  },
+  "resistance_evidence_tiers": {
+    "main_identified_set": [
+      "PRIMARY PHYSICAL SPECIFICATION",
+      "AUTOMOTIVE-COMPATIBLE ENVELOPE"
+    ],
+    "stress_extreme_set": [
+      "EXTREME / CONDITIONAL ENVELOPE"
+    ],
+    "stress_headline_rule": "STRESS_OR_EXTREME_STATES_CANNOT_SILENTLY_CREATE_A_MAIN_CARBON_CLASSIFICATION"
+  },
+  "r10_r1s_rules": {
+    "primary": "R10",
+    "alternative_physical_robustness": "R1s",
+    "merge_intervals": false,
+    "timescale_switching": false,
+    "reversal_rule": "R10_R1s_SIGN_CLASSIFICATION_REVERSAL_PROHIBITS_A_ROBUST_MAIN_RESULT"
+  },
+  "pack_loss_share_rules": {
+    "retained_scenarios": [
+      "0.50_CELL_SENSITIVE_SHARE",
+      "0.75_CELL_SENSITIVE_SHARE",
+      "1.00_CELL_SENSITIVE_SHARE"
+    ],
+    "selection_after_results": false,
+    "robustness_rule": "MAIN_ROBUST_CLASSIFICATION_MUST_SURVIVE_ALL_RELEVANT_DECLARED_SHARES"
+  },
+  "technical_feasibility": {
+    "mobility_service": "P14_BOUNDED_NHTS_TRIP_LONG_DISTANCE_FAMILY",
+    "power_service": "P13_FIXED_CYCLE_TERMINAL_POWER_ENVELOPE",
+    "universal_soh_threshold": false,
+    "primary_mobility_requirement": "mobility_central",
+    "structural_robustness_mobility_requirements": [
+      "mobility_lower",
+      "mobility_upper"
+    ],
+    "ordering": "TECHNICAL_FEASIBILITY_BEFORE_CARBON_CLASSIFICATION"
+  },
+  "scenario_hierarchy": {
+    "primary_identified_set": {
+      "physical_state": "P12_P13_SUPPORTED_PRIMARY_AND_AUTOMOTIVE_COMPATIBLE_STATES",
+      "resistance_timescale": "R10",
+      "pack_loss_share": "ALL_THREE_DECLARED_P13_SHARES",
+      "mobility_requirement": "mobility_central",
+      "mileage": "central_use",
+      "survival_scale": "central_4.5_YEAR_ASSUMPTION",
+      "charging_efficiency": "p50",
+      "grid_geography": "LOAD_WEIGHTED_US",
+      "grid_pathways": "MidCase_LowRECost_HighRECost_AS_SEPARATE_MATCHED_z_CONTEXTS",
+      "manufacturing_pathways": "SPS_SDS_AS_SEPARATE_MATCHED_z_CONTEXTS"
+    },
+    "structural_robustness_set": {
+      "resistance_timescale": "R1s_ALTERNATIVE",
+      "mobility_requirements": [
+        "mobility_lower",
+        "mobility_upper"
+      ],
+      "mileage": [
+        "lower_use",
+        "higher_use"
+      ],
+      "survival_scale": [
+        "lower_3.5_YEAR_ASSUMPTION",
+        "upper_5.5_YEAR_ASSUMPTION"
+      ],
+      "charging_efficiency": [
+        "p10",
+        "p90"
+      ],
+      "grid_geography": "18_GEA_REGIONAL_SERIES",
+      "manufacturing_benchmark": "STATIC_SAME_SOURCE_2020_CURRENT",
+      "grid_sensitivity": "Cambium-2023 LRMER sensitivity"
+    },
+    "extreme_stress_set": {
+      "physical_state": "EXTREME / CONDITIONAL ENVELOPE",
+      "headline_eligible": false
+    },
+    "pool_into_undifferentiated_mega_envelope": false
+  },
+  "result_hierarchy": [
+    "PRIMARY CLASSIFICATION",
+    "STRUCTURAL ROBUSTNESS",
+    "EXTREME/STRESS RESULT",
+    "TECHNICAL FEASIBILITY"
+  ],
+  "non_robustness_gate": [
+    "DEPENDS_ONLY_ON_EXTREME_OR_CONDITIONAL_RESISTANCE_STATES",
+    "REVERSES_BETWEEN_R10_AND_R1s",
+    "REVERSES_ACROSS_ADMISSIBLE_PACK_LOSS_SHARES",
+    "DEPENDS_ON_AN_UNSUPPORTED_MOBILITY_OR_POWER_ASSUMPTION",
+    "EXISTS_ONLY_UNDER_ONE_EXTREME_RESIDUAL_SERVICE_TREATMENT",
+    "EXISTS_ONLY_UNDER_ONE_GRID_OR_MANUFACTURING_PATHWAY_WHEN_PATHWAYS_ARE_IN_THE_TARGET_SET",
+    "TREATS_STATE_BOUNDS_AS_PREDICTED_TRAJECTORIES",
+    "REQUIRES_UNSUPPORTED_INTERPOLATION_OR_EXTRAPOLATION",
+    "USES_ASYMMETRIC_POLICY_STATE_ASSUMPTIONS_WITHOUT_PHYSICAL_JUSTIFICATION",
+    "DEPENDS_ON_MISMATCHED_EXOGENOUS_SCENARIO_CORNERS",
+    "CHANGES_SIGN_WHEN_ANY_REQUIRED_ADMISSIBLE_STATE_TREATMENT_IS_RESTORED"
+  ],
+  "prohibited_outputs": [
+    "OPTIMAL_RETIREMENT_YEAR",
+    "OPTIMAL_SOH",
+    "OPTIMAL_RESISTANCE",
+    "OPTIMAL_BATTERY_AGE",
+    "TIME_TO_STATE",
+    "MILEAGE_TO_STATE",
+    "EARLY_REPLACEMENT_CARBON_REGIME",
+    "INTERIOR_REPLACEMENT_CARBON_REGIME",
+    "USE_UNTIL_TECHNICAL_BOUNDARY_CARBON_REGIME",
+    "POPULATION_PROBABILITY_OF_ROBUST_REPLACE",
+    "FLEET_PREVALENCE_OF_A_DEGRADATION_STATE",
+    "REAL_WORLD_DEGRADATION_TRAJECTORY",
+    "DETERMINISTIC_RESISTANCE_GROWTH_WITH_AGE"
+  ],
+  "next_stages": {
+    "P15R": {
+      "name": "P15R — STATE-CONDITIONED LIFECYCLE-GHG ACCOUNTING ENGINE",
+      "authorized_now": false,
+      "role": [
+        "IMPLEMENT_G_R_AND_G_C_ACCOUNTING",
+        "VERIFY_UNITS_AND_SYSTEM_BOUNDARIES",
+        "CREATE_POLICY_SPECIFIC_CARBON_COMPONENTS",
+        "VERIFY_COMMON_INVARIANTS_CANCEL"
+      ],
+      "final_decision_classification": "PROHIBITED_UNTIL_ACCOUNTING_VALIDATION_PASSES",
+      "optimization_search": false
+    },
+    "P16R": {
+      "name": "P16R — IDENTIFIED-SET DECISION BOUNDS & ROBUSTNESS CLASSIFICATION",
+      "authorized_now": false,
+      "entry_gate": "P15R_PASS_AND_EXPLICIT_INSTRUCTION",
+      "role": [
+        "CONSTRUCT_lower_DeltaG_AND_upper_DeltaG",
+        "APPLY_Theta(z)",
+        "APPLY_PRIMARY_CARBON_CLASSIFICATIONS",
+        "APPLY_TECHNICAL_FEASIBILITY",
+        "APPLY_PRE_REGISTERED_ROBUSTNESS_GATES"
+      ],
+      "trajectory_optimization": false
+    },
+    "P17": {
+      "name": "P17 — PUBLICATION-QUALITY RESULT SYNTHESIS_AND_ROBUSTNESS_AUDIT",
+      "authorized_now": false
+    }
+  },
+  "historical_failure_invariants": {
+    "P14_5": "REAL-WORLD DEGRADATION BRIDGE FAIL",
+    "P14_5I": "R3 REAL-WORLD DEGRADATION BRIDGE FAIL",
+    "failure_records_removed": false,
+    "zero_admissible_r3_joint_rows": true,
+    "deterministic_real_world_R_t_available": false
+  },
+  "pre_amendment_implementation_spec": {
+    "path": "docs/IMPLEMENTATION_SPEC.md",
+    "sha256": "f8e29917daa0a4f999088005e0c85dffd6cc3cf3f828b1198dce4b6c1c1d3a80",
+    "bytes": 32002,
+    "line_count": 844
+  },
+  "frozen_scientific_output_integrity": {
+    "P12": {
+      "data/processed/luh_degradation_state_model.parquet": "33f68b7465bf573911dd877a67acec2c91758c0e0ecf98f1af06edcd3918f5fd",
+      "data/processed/luh_degradation_state_observations.parquet": "fc56bf90819d5be5e083ff353c38e8b262039921775c4e35d396da1903da3a58",
+      "data/processed/luh_degradation_uncertainty.parquet": "bdc68bae59f147348c20182c95feb6ef2778141f3490bd79458619bdfcaa0d61",
+      "data/processed/schreiber_automotive_validation_summary.parquet": "5d74a56e8b9407a1cca290340a22ccadbfe1f951dcaddad8be1b83461f219e5c",
+      "data/processed/tum_id3_hppc_validation_summary.parquet": "f7d803c4dd3d5d9fdc5d7ea5340d8ee23039bc030ab33ea711167fcd98584818"
+    },
+    "P13": {
+      "data/processed/p13_energy_translation_uncertainty.parquet": "eaa8e68bddc2ff075c76e32d83b4b2b34114bada983c16ffb4fafb18501858ce",
+      "data/processed/p13_incremental_energy_penalty.parquet": "28a63c70bf8240d831753fb19a2ccac333472b944de3b2c4f9bfd7a3b70980a9",
+      "data/processed/p13_pack_electrical_states.parquet": "73537b24d550e7ea81cd9bf92f7480388196d03a2c42dad19486de02e92e98d9",
+      "data/processed/representative_bev_baseline.parquet": "382e4280b5aa6db32405ad37dd0258fd76395a71d031a25fdcc2d016d484b9da",
+      "data/processed/tum_id3_vehicle_energy_validation_summary.parquet": "8e9904f7b42dc4e8a58574190ee3ce2a4a2c8ef01028371f702c9e8e71f84963"
+    },
+    "P14": {
+      "data/processed/p14_battery_manufacturing_pathways.parquet": "18b8f204fa1d4c8aad148b1d7a3c980724f8b4ad3c62513fc42a88e11109b46b",
+      "data/processed/p14_calendar_architecture.parquet": "c03f83149b710dfa5d2a35953d9bdb91eceba91c0fa65194abec480e5a35c0b3",
+      "data/processed/p14_charging_conversion.parquet": "34005736ccffeff504878b89efc360a22e1e24c39e92a6c721dac3c3c41c3c79",
+      "data/processed/p14_grid_pathways.parquet": "aba307f9e2992eda2407899ebb589c89be82f04afa160cad3e202c3e9059d924",
+      "data/processed/p14_mobility_service_requirements.parquet": "b9116f00ea90c19199e72e08ab324cbe0af68c5cbb0abfa8ab0e5156b0f10350",
+      "data/processed/p14_mobility_use_scenarios.parquet": "ccec0704483541824fc682ca757e8e06b3df6c0690b8d369c6b017c600a47268",
+      "data/processed/p14_vehicle_survival.parquet": "b625aa95a4cc3dde4c18dbb94b3f3ef22eaaf5e79522c9edb5331a9f1e0ff566"
+    }
+  },
+  "disclosures": {
+    "lifecycle_ghg_calculated": "NONE",
+    "decision_bounds_calculated": "NONE",
+    "replacement_optimization_performed": "NONE",
+    "original_p145_p145i_failure_records_removed": "NO",
+    "p12_p13_p14_scientific_outputs_modified": "NONE"
+  }
+}

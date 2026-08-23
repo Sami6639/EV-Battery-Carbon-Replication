@@ -1,0 +1,121 @@
+configuration_id: P13_ARCHETYPE_AND_PACK_LOSS_RULE_LOCK_V1
+locked_before_degradation_energy_results: true
+lock_date: 2026-08-20
+fastsim_version: 3.0.6
+
+representative_vehicle:
+  role: representative_us_light_duty_midsize_bev_archetype
+  source_rule:
+    dataset: NREL Transportation ATB 2024, Argonne Autonomie-derived inputs
+    row_filter:
+      year: 2023
+      scenario: Mid
+      vehicle_weight_category: Light Duty
+      vehicle_class: Midsize
+      vehicle_powertrain: Battery Electric
+      vehicle_detail: Battery Electric Vehicle (300-mile range)
+    rationale: >-
+      Current-model-year Mid trajectory, midsize passenger class, and the 300-mile
+      member of the official ATB range set; selection was fixed before any P13
+      degradation-energy result was calculated.
+  nominal_pack_energy_kwh: 77.413145
+  atb_charging_inclusive_energy_wh_per_mile: 270.072194
+  atb_usable_energy_kwh: null
+  fastsim_structural_template: 2020 Chevrolet Bolt EV thrml.yaml
+  structural_template_role: >-
+    Software-compatible BEV component-map template only; it is not the named or
+    universal vehicle archetype and does not supply the locked pack size.
+  synthesized_vehicle_parameters:
+    method: arithmetic midpoint of the two U.S. BEV definitions packaged with FASTSim 3.0.6
+    source_resources:
+      - 2020 Chevrolet Bolt EV thrml.yaml
+      - 2022 Tesla Model 3 RWD thrml.yaml
+    mass_kilograms: 1689.0645
+    drag_coefficient: 0.2695
+    frontal_area_square_meters: 2.308449
+    rolling_resistance_coefficient: 0.007383602624228343
+    motor_max_power_watts: 194069.987
+    battery_max_power_watts: 183113.71195
+    base_auxiliary_power_watts: 250.0
+    transmission_efficiency: 0.98
+
+drive_cycles:
+  cycles:
+    - id: UDDS
+      fastsim_resource: udds.csv
+      role: city
+    - id: HWFET
+      fastsim_resource: hwfet.csv
+      role: highway
+  combined:
+    method: distance-weighted energy intensity
+    city_fraction: 0.55
+    highway_fraction: 0.45
+    source: NREL Transportation ATB 2024 fuel-economy definition
+
+energy_boundary:
+  primary_output: L2_HV_BATTERY_SIDE_ELECTRICAL_ENERGY
+  l1: mechanical_traction_service
+  l2: hv_battery_side_electrical_energy
+  l3: grid_side_electricity_not_calculated
+  charging_conversion_performed: false
+
+capacity_scaling:
+  physical_field: reconstructed_capacity_retention
+  forbidden_field_for_physical_scaling: source_capacity_soh_percent
+  fresh_usable_window_fraction_scenarios: [0.85, 0.90, 0.95]
+  interpretation: >-
+    Capacity retention scales usable stored energy and range feasibility only; it
+    does not directly scale traction energy per distance.
+
+pack_electrical_architecture:
+  nominal_cell_voltage_v: 3.65
+  topology_scenarios:
+    - {topology_id: low_voltage_96s, series_count: 96, nominal_pack_voltage_v: 350.4}
+    - {topology_id: central_voltage_108s, series_count: 108, nominal_pack_voltage_v: 394.2}
+    - {topology_id: high_voltage_120s, series_count: 120, nominal_pack_voltage_v: 438.0}
+  parallel_count_rule: >-
+    Equivalent parallel count is derived deterministically from nominal pack
+    energy, series count, nominal cell voltage, and a 3.0-Ah representative cell;
+    topology is sensitivity metadata, not an absolute transfer of Luh cell ohms.
+  representative_cell_capacity_ah: 3.0
+  absolute_luh_cell_resistance_transfer: forbidden
+
+fresh_pack_loss_decomposition:
+  source: FASTSim fresh battery storage loss over each fixed drive cycle
+  cell_resistance_share_of_ageing_sensitive_pack_loss_scenarios: [0.50, 0.75, 1.00]
+  fixed_noncell_share_rule: 1_minus_cell_share
+  noncell_components: [busbars, contacts, bms_current_path, other_fixed_pack_paths]
+  outcome_selection_prohibited: true
+
+translation:
+  selected_primary: T1_PHYSICS_BASED_RESISTANCE_LOSS_INCREMENT
+  equation: delta_E_loss = integral(I_pack_squared * R_cell_pack_fresh * (R_rel - 1) dt)
+  implementation_equivalent: >-
+    FASTSim fresh storage-loss energy multiplied by the pre-specified cell share
+    and by (relative cell resistance - 1); fixed non-cell loss does not age.
+  direct_resistance_to_vehicle_energy_proportionality: forbidden
+  temperature_reference_c: 25.0
+  primary_resistance_specification: r10_relative
+  alternative_resistance_specification: r1s_relative
+
+p12_domain:
+  capacity_min_days: 0.0
+  capacity_max_days: 448.184919
+  resistance_min_days: 0.0
+  resistance_max_days: 447.8987
+  outside_status: OUTSIDE_VALIDATED_DEGRADATION_DOMAIN
+
+source_roles:
+  luh: degradation_state_source
+  schreiber: independent_automotive_validation_only
+  tum_id3: fresh_vehicle_electrical_plausibility_only
+  sevdari: charging_conversion_not_used_in_p13
+
+prohibited_inputs:
+  - grid_carbon_intensity
+  - battery_manufacturing_ghg
+  - lifecycle_ghg
+  - vehicle_survival
+  - replacement_timing
+  - retirement_regime

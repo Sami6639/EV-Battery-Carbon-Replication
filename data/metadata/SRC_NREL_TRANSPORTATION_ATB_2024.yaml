@@ -1,0 +1,23 @@
+source_id: SRC_NREL_TRANSPORTATION_ATB_2024
+source_title: 2024 Transportation Annual Technology Baseline data archive
+authors_or_institution: National Renewable Energy Laboratory / Argonne National Laboratory
+doi_or_identifier: Transportation ATB 2024 data v1
+official_source: https://atb.nlr.gov/transportation/2024/data
+retrieval_date: 2026-08-20
+version: 2024_atb_transportation_data_v1
+licence: Official U.S. Department of Energy laboratory public data; source terms apply
+chemistry: NOT APPLICABLE
+geography: United States
+temporal_scope: 2023-2050 vehicle technology assumptions
+measurement_or_system_level: Representative vehicle technology modeling
+original_units: DOCUMENTED IN ARCHIVE
+acquisition_method: Official NLR Transportation ATB direct download
+transformation_status: RAW_UNMODIFIED
+files:
+  - original_filename: 2024_atb_transportation_data_v1.zip
+    file_size_bytes: 271753589
+    raw_relative_path: data/raw/SRC_NREL_TRANSPORTATION_ATB_2024/2024_atb_transportation_data_v1.zip
+    sha256: 447082C63D7433DAD1D3691CB216687096921B73A677DB204FB45A0631FB45E3
+    official_source_url: https://atb.nlr.gov/img/other/2024_atb_transportation_data_v1.zip
+    archive_member_used: input/inputs_vehicles.csv
+    transformation_status: RAW_UNMODIFIED

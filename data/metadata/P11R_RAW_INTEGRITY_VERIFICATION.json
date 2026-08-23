@@ -1,0 +1,15 @@
+{
+  "verification_date": "2026-08-20",
+  "previous_raw_file_count": 33,
+  "all_previous_raw_unchanged": true,
+  "pre_recovery_manifest": "data/metadata/P11R_PRE_RECOVERY_RAW_SHA256.json",
+  "pre_recovery_manifest_sha256": "1d0e1e505b9b9fc44f9fa38cbd746ecaa5d9d29c0e2e925c3433d28a576a5354",
+  "new_raw_file_count": 4,
+  "new_raw_files": {
+    "data/raw/SRC_CAMBIUM_2024/ScenarioViewer_Cambium2024_Annual_GEA_file_69141.zip": {"bytes": 263574, "sha256": "b5438ee16c0cf03054bac62520155cbfdc8e98797aba025e48e793fb1527c189", "status": "RAW_UNMODIFIED"},
+    "data/raw/SRC_TUM_ID3/Data/02_Battery/06_HPPC/VW_78Ah_1794_HPPC_3C_9steps_20deg.csv": {"bytes": 309132602, "sha256": "5923b69923143247c052f5ee1c6aaff4e3a9120852fdb1527ab77242c9ac622b", "status": "RAW_UNMODIFIED"},
+    "data/raw/SRC_TUM_ID3/Data/02_Battery/06_HPPC/VW_78Ah_1828_HPPC_3C_9steps_0deg.csv": {"bytes": 311521011, "sha256": "39c7597a80455384fe54578ad80f5b299ca301ad372fc49b7692ac6b7e96cde2", "status": "RAW_UNMODIFIED"},
+    "data/raw/SRC_TUM_ID3/Data/02_Battery/06_HPPC/VW_78Ah_1856_HPPC_3C_9steps_40deg.csv": {"bytes": 309592964, "sha256": "5176752a1010daad637396307966d454e331b127ba0cfe5dff09fb33f9676ebe", "status": "RAW_UNMODIFIED"}
+  },
+  "raw_scientific_values_manually_edited": "NONE"
+}

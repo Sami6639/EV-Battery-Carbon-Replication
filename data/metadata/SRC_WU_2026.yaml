@@ -1,0 +1,18 @@
+source_id: SRC_WU_2026
+identity: Wu et al. 2026, Technological improvements in EV batteries offset climate-induced durability challenges
+article_doi: 10.1038/s41558-026-02579-z
+software_doi: 10.5281/zenodo.17173892
+repository: https://github.com/ASSET-Lab/EVBatteryClimateChange
+commit: 25dd34bd04c1184c22746843c909fb426af741f1
+license: CC BY 4.0 (article and Zenodo deposit)
+retrieval_date: 2026-08-21
+level: cell model coupled to vehicle/climate operation
+chemistry: multiple commercial degradation models
+acquisition: official repository plus exact Zenodo ZIP and metadata JSON
+zenodo_zip_md5_verified: bd32a7654900fe3499ccd8e8aaf39357
+role: MODEL_APPLICATION_AND_EXPOSURE_ARCHITECTURE
+limitations:
+  - reconstructed repository reproduces figures
+  - core model is reference-only, trimmed, hard-coded to HPC paths, and not runnable as deposited
+  - large ERA5/CMIP6/city dependencies are absent
+prohibited_roles: [capacity calibration, field validation, exact project driving history]

@@ -1,0 +1,29 @@
+{
+  "stage": "P14.5I",
+  "purpose": "pre-implementation integrity envelope",
+  "captured_before_scientific_implementation": true,
+  "p12_p13_p14_scientific_outputs_must_remain_unchanged": true,
+  "p145_failure_record_must_remain": true,
+  "pre_amendment_implementation_spec": {
+    "path": "docs/IMPLEMENTATION_SPEC.md",
+    "bytes": 32002,
+    "sha256": "f8e29917daa0a4f999088005e0c85dffd6cc3cf3f828b1198dce4b6c1c1d3a80"
+  },
+  "pre_append_decision_log": {
+    "path": "docs/RESEARCH_DECISION_LOG.md",
+    "bytes": 12155,
+    "sha256": "ad1812ab65a494e5706f53e56f2cd7efce9f6de9c25a6f39b67d3069a88588e2"
+  },
+  "source_manifest": {
+    "path": "data/metadata/SOURCE_MANIFEST.csv",
+    "bytes": 13781,
+    "sha256": "7aaec8a7c4e47e362768baebcdcf551f6c26eb6ea7f7852accf3469a83cde647"
+  },
+  "historical_stage_manifests": [
+    {"path": "results/intermediate/p12_artifact_manifest.json", "sha256": "480868dd3ba958686b2dfe0a9aad8faefd23ad545625a8273d77ef45bb358259"},
+    {"path": "results/intermediate/p13_artifact_manifest.json", "sha256": "6c6010795711a7624e71c4e5360d317fdb63cf89768dc9d7986242b6e5e524f5"},
+    {"path": "results/intermediate/p14_artifact_manifest.json", "sha256": "c2830cf0890d17fa2fe0fc06daf77b46f83316f6e73f355e0e4847c072c4fb66"},
+    {"path": "results/intermediate/p145_artifact_manifest.json", "sha256": "4d9ff80852c3b4ec382d6180f7bd0bb3788382af8bc6f10b647abf0b5fa4ce76"}
+  ],
+  "capture_note": "The capture script also verifies every P12/P13/P14/P14.5 artifact referenced by these manifests before and after P14.5I."
+}

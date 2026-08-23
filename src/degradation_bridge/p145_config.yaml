@@ -1,0 +1,47 @@
+configuration_id: P145_REAL_WORLD_DEGRADATION_BRIDGE_LOCK_V1
+locked_before_lifecycle_results: true
+lock_date: 2026-08-20
+cohort_id: ENTRY_2025
+entry_year: 2025
+horizon_year: 2050
+real_world_inputs:
+  mileage_scenarios_km_per_year: {lower_use: 3218.688, central_use: 10729.496448, higher_use: 19312.128}
+  fresh_l2_battery_side_kwh_per_km: 0.09324077636479178
+  nominal_pack_energy_kwh: 77.413145
+  fresh_usable_window_fraction_scenarios: [0.85, 0.90, 0.95]
+  pack_energy_equivalent_cycle_formula: cumulative_l2_kwh / (nominal_pack_energy_kwh * fresh_usable_window_fraction)
+  proxy_warning: PACK_ENERGY_EQUIVALENT_CYCLES_ARE_NOT_SOURCE_CELL_AH_AND_DO_NOT_DEFINE_DEGRADATION_STATE
+source_native_exposure:
+  luh_profile_efc_formula: (discharge_throughput_ah - same_cell_baseline_discharge_throughput_ah) / same_cell_capacity_baseline_ah
+  luh_calendar_max_elapsed_days: 448.1849189814815
+  luh_profile_max_elapsed_days: 448.14498842592593
+  luh_profile_max_discharge_efc: 1549.8012337588484
+  luh_checkup_interval: first_to_second_7_days_then_21_days
+  luh_profile_operation: continuous_between_checkups_with_5_minute_rests
+  measurement_reference: capacity_25C_1over3C_full_cycle_and_resistance_25C_50pct_SOC
+  measurement_reference_is_ageing_condition: false
+candidate_bridges:
+  - {bridge_id: A_PROFILE_THROUGHPUT, architecture: profile_ageing_throughput_bridge, disposition: PARTIAL_USE_EXPOSURE_ONLY}
+  - {bridge_id: B_CALENDAR_PLUS_USE, architecture: calendar_plus_use_two_component, disposition: REJECTED_NO_SEPARABLE_ADDITIVE_EVIDENCE}
+  - {bridge_id: C_EMPIRICAL_BOUNDED_STATE_TRANSITION, architecture: empirical_bounded_state_transition_envelope, disposition: REJECTED_NO_JOINT_REAL_TIME_USE_SUPPORT}
+state_rules:
+  physical_capacity_field: reconstructed_capacity_retention
+  forbidden_capacity_field: source_capacity_soh_percent
+  primary_resistance_field: r10_rel
+  alternative_resistance_field: r1s_rel
+  nonzero_real_world_state_assignment: NONE_SOURCE_INSUFFICIENT
+  baseline_state: {capacity_retention: 1.0, r10_rel: 1.0, r1s_rel: 1.0}
+  p12_pooled_curve_role: EXPERIMENTAL_STATE_SPACE_SUMMARY_ONLY
+  schreiber_role: INDEPENDENT_AUTOMOTIVE_VALIDATION_ONLY
+scenario_classes: [LOWER_DEGRADATION_BOUND, PRIMARY_CENTRAL, HIGHER_DEGRADATION_BOUND, AUTOMOTIVE_CONDITIONAL_EXTREME]
+false_optimum_precursor_rejection:
+  - any_nonbaseline_state_without_joint_calendar_and_use_support
+  - any_elapsed_day_to_real_year_stretch
+  - any_calendar_use_addition_without_separability_evidence
+  - any_state_outside_p12_observed_envelope
+  - any_source_capacity_soh_percent_as_usable_capacity
+  - any_schreiber_forced_alignment_or_primary_fit
+  - any_invented_tail_or_clipped_lifetime_state
+prohibited: [lifecycle_ghg, grid_or_manufacturing_carbon_integration, replacement_optimization, replacement_comparison, monte_carlo_lifecycle, preferred_replacement_year, retirement_regime, publication_or_manuscript]
+final_gate: REAL-WORLD DEGRADATION BRIDGE FAIL
+failure_class: REAL-WORLD DEGRADATION BRIDGE SOURCE INSUFFICIENCY

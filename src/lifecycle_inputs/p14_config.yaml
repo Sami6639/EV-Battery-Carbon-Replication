@@ -1,0 +1,56 @@
+configuration_id: P14_LIFECYCLE_INPUT_LOCK_V1
+locked_before_lifecycle_results: true
+lock_date: 2026-08-20
+entry_year: 2025
+horizon_year: 2050
+annual_mileage_quantiles: [0.25, 0.50, 0.75]
+mobility_rule:
+  selected: BOUNDED_NHTS_TRIP_LONG_DISTANCE_FAMILY
+  lower: {dataset: trip, quantile: 0.95}
+  central: {dataset: long_distance, quantile: 0.50}
+  upper: {dataset: long_distance, quantile: 0.75}
+  universal_soh_cutoff: NONE
+power_service:
+  source: P13 representative BEV FASTSim fixed cycles
+  rule: observed_cycle_terminal_power_envelope
+survival:
+  source_id: SRC_GREENE_LEARD_2024
+  doi: 10.1016/j.tra.2024.103982
+  class: passenger_cars
+  base_calendar_year: 2020
+  published_median_years_2020: 16.1
+  published_median_growth_fraction_per_year: 0.0067
+  projected_entry_year: 2025
+  first_year_survival: 0.995
+  representation: source_equation_median_anchored_logistic_scale_envelope
+  logistic_scale_years: {lower_survival: 3.5, central: 4.5, higher_survival: 5.5}
+  caveat: scale values are explicit P14 scenario assumptions because usable published curve coefficients were not available as machine-readable data
+grid:
+  source_id: SRC_CAMBIUM_2024
+  version: 2024
+  metric: aer_load_co2e
+  scenarios: [MidCase, LowRECost, HighRECost]
+  geography_architecture: national_load_weighted_central_plus_18_gea_regional_robustness
+  weight_field: enduse_load
+  interpolation: piecewise_linear_in_domain
+  extrapolation: NONE
+manufacturing:
+  source_id: SRC_LLAMAS_OROZCO_2023
+  level: pack
+  interpolation: piecewise_linear_in_domain
+  static_benchmark: same_source_2020_current_factor_held_constant
+  geography: unresolved_source_implicit
+charging:
+  source_id: SRC_SEVDARI_2023
+  conversion: L2_battery_side_to_L3_grid_side
+  quantiles: [0.10, 0.50, 0.90]
+  valid_efficiency_rule: 0_lt_efficiency_le_1
+  charging_inclusive_atb_role: validation_only_no_conversion
+horizon:
+  rule: truncate_operation_at_2050_and_report_residual_survival
+prohibited:
+  - lifecycle_ghg
+  - replacement_optimization
+  - preferred_replacement_year
+  - retirement_regime
+  - monte_carlo_lifecycle

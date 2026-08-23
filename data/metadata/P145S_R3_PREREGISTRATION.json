@@ -1,0 +1,71 @@
+{
+  "stage": "P14.5S",
+  "architecture": "R3 — HYBRID BOUNDED MAPPING",
+  "status_before_model_runs": "PRE_REGISTERED",
+  "capacity": {
+    "claim": "modeled real-world capacity trajectory",
+    "primary_model_family": ["Nmc622_Gr_DENSO50Ah_Battery", "Nmc811_GrSi_LGMJ1_4Ah_Battery"],
+    "structural_sensitivity": ["NMC_Gr_75Ah_A", "NMC_Gr_50Ah_B1", "NMC_Gr_50Ah_B2", "Nmc811_GrSi_LGM50_5Ah_Battery"],
+    "selection_rule": "Use every eligible primary-family model as a non-averaged envelope; never select after field or lifecycle outcomes.",
+    "parameter_rule": "Source-native parameters only; degradation_scalar=1; no recalibration to Liu or Deng.",
+    "calendar_use_rule": "Use each model's source-native combined state equations; never add P12 Luh calendar fade to BLAST cycle fade."
+  },
+  "exposure_generator": {
+    "selected": "E2_BOUNDED_DUTY_CYCLE_FAMILY",
+    "rejected_as_primary": {"E1": "one representative daily profile would over-identify an exact life and the Wu core pipeline is not runnable as deposited", "E3": "no source-supported joint empirical schedule distribution exists for P14 annual mileage scenarios"},
+    "state_resolution_minutes": 15,
+    "model_aggregation_hours": 1,
+    "annual_mileage_km": [3218.688, 10729.496448, 19312.128],
+    "states": ["driving", "charging", "parked_not_charging"],
+    "dimensions": ["annual_mileage", "cell_temperature", "parked_soc", "charging_frequency", "charging_rate", "parked_duration", "thermal_management"],
+    "design": "17 profiles: one anchor; two one-factor bounds for each of seven dimensions; two coherent joint stress bundles. No full Cartesian grid.",
+    "charging_policies": ["immediate", "balanced", "home_23_to_08"],
+    "charger_kw": {"home": 3.7, "workplace": 11, "public": 22, "fast_sensitivity": [75, 150]},
+    "parked_soc_rule": "Emerges from energy balance and pre-selected charging policy; report time share in [0,0.3), [0.3,0.7], and (0.7,1.0]. Never choose a low-SOC policy after observing degradation.",
+    "temperature_rule": "Generate cell temperature through a documented thermal layer or bounded cell-temperature proxy; ambient temperature is never substituted directly.",
+    "aggregation_qa": "Annual distance and equivalent full-cycle throughput must agree before/after aggregation within 0.5%."
+  },
+  "field_validation": {
+    "roles": {"Liu_2025": "external validation; maximum attainable status PASS WITH BOUNDS because OCV table is withheld", "Deng_2023": "open external validation", "Qiushi_Wang_2023": "method corroboration only; LFP and no public raw telemetry"},
+    "partition": "No field record enters fitting or primary-family selection. If a later diagnostic/confirmation split is needed, assign whole vehicles by ascending SHA-256(source_id|vehicle_id): first 60% diagnostic and final 40% untouched confirmation; never split rows from one vehicle.",
+    "metrics": ["absolute retention error in percentage points", "median absolute error in percentage points", "signed median bias in percentage points", "error by age and use strata", "observed coverage by the non-averaged model envelope", "median envelope width in percentage points"],
+    "strata": {"age_years": ["[0,1]", "(1,2]", "(2,3]", ">3"], "use": "source-specific cumulative-mileage tertiles fixed before outcome comparison", "minimum_n_for_scored_stratum": 20},
+    "thresholds": {
+      "PASS": {"overall_mdae_pp_max": 3.0, "absolute_bias_pp_max": 1.5, "each_scored_stratum_mdae_pp_max": 4.0, "envelope_coverage_percent_min": 80, "median_envelope_width_pp_max": 10.0},
+      "PASS_WITH_BOUNDS": {"overall_mdae_pp_max": 5.0, "absolute_bias_pp_max": 3.0, "each_scored_stratum_mdae_pp_max": 7.0, "envelope_coverage_percent_min": 60, "median_envelope_width_pp_max": 15.0},
+      "FAIL": "Any PASS WITH BOUNDS threshold missed; any source-specific FAIL; model-domain violation in more than 50% of comparable points; or chemistry/input incompatibility. Overall status is the worst source-specific status."
+    },
+    "justification": "Three percentage points is a practically material SOH error and is above Liu's 0.60% laboratory label-check MAPE; five percentage points accommodates field label and partial-charge uncertainty without treating a wide envelope as validation. Width limits prevent trivial coverage."
+  },
+  "resistance": {
+    "claim": "conditional resistance-state envelope",
+    "identifiability": "real-world resistance trajectory unidentified",
+    "blast_result": "BLAST REAL-WORLD RESISTANCE OUTPUT = NOT AVAILABLE / NOT APPROVED",
+    "primary": "R10/R10_0 at 10 ms",
+    "alternative": "R1s/R1s_0 at 1 s",
+    "matching_window_capacity_retention": 0.025,
+    "matching_window_rule": "fixed symmetric window; never widen, interpolate, clip, or switch timescale",
+    "minimum_support": {"observations": 10, "cells": 3, "experimental_conditions": 2},
+    "conditioning": ["capacity retention", "reference temperature", "reference SOC", "ageing/stress class", "automotive validation class"],
+    "forbidden_conditioning": ["future lifecycle carbon", "calendar year"],
+    "central_envelope": "P12 Luh source-supported 10th-90th percentiles inside compatible matched states, separately for R10 and R1s",
+    "automotive_outer_envelope": "Compatible Schreiber states may expand an outer automotive envelope; contact-sensitive commuter and highway post-knee states remain EXTREME / CONDITIONAL and never define the central envelope.",
+    "unsupported_return": "RESISTANCE STATE UNSUPPORTED",
+    "prohibited": "No midpoint or regression may be reported as deterministic R(t); capacity fade never implies resistance fade."
+  },
+  "long_horizon_label": "MODEL PROJECTION BEYOND DIRECT FIELD VALIDATION",
+  "false_optimum_rejection_rules": [
+    "depends on one BLAST model when another eligible NMC model reverses it",
+    "appears only beyond direct field-validation horizon",
+    "depends on RESISTANCE STATE UNSUPPORTED regions",
+    "relies only on extreme Schreiber states",
+    "depends on one arbitrary parked-SOC assumption",
+    "depends on one arbitrary temperature scenario",
+    "requires tail clipping",
+    "requires deterministic capacity-to-resistance inference",
+    "relies on an unvalidated 10-25-year projection",
+    "disappears under reasonable capacity/resistance structural bounds"
+  ],
+  "rq_status": "RQ PRESERVED — INTERPRETATION BOUNDED",
+  "prohibited_claim": "real-world resistance trajectory was identified."
+}

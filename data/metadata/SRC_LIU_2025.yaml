@@ -1,0 +1,24 @@
+source_id: SRC_LIU_2025
+identity: Liu et al. 2025, Multi-modal framework for battery state of health evaluation using open-source electric vehicle data
+article_doi: 10.1038/s41467-025-56485-7
+repository: https://github.com/HoraceLiu1010/Multi-modal-SOH-estimation-framework
+commit: 56c1ef4dd0c5efe005368624e17a1c76a32b6c16
+licenses: MIT (repository); CC BY-NC-ND 4.0 (article/supplement)
+retrieval_date: 2026-08-21
+chemistry: NCM; exact subtype not disclosed
+level: 300-vehicle fleet in article; public repository sample is one vehicle
+role: PRIMARY_FIELD_CAPACITY_VALIDATION
+classification: FIELD VALIDATION WITH LABEL-REPRODUCIBILITY LIMITATION
+sample_audit:
+  rows: 1203513
+  files: 6
+  observed_span_days: 1321.9428
+  odometer_range_km: 66294.6
+  missing_speed: 8297
+  missing_batteryvoltage: 10389
+  missing_probetemperatures: 10389
+label_limit: OEM/supplier OCV-SOC table is withheld; published labels cannot be reconstructed exactly
+missing_periods: BMS-off parked intervals are absent
+access_limit: full-fleet official URL was unavailable during audit
+leakage_risk: published random sample split may mix observations from the same vehicle/time dependence
+prohibited_roles: [BLAST tuning, fully reproducible ground truth, resistance trajectory]

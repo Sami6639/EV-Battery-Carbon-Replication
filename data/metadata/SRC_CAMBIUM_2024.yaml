@@ -1,0 +1,45 @@
+source_id: SRC_CAMBIUM_2024
+source_title: Workbooks for Cambium 2024 Data
+authors_or_institution: Pieter Gagnon / National Renewable Energy Laboratory
+doi_or_identifier: 10.7799/2560791
+official_source: https://data.nlr.gov/submissions/289
+retrieval_date: 2026-08-20
+version: Cambium 2024 workbook; catalog updated 2025-04-22
+licence: NREL dataset license; attribution required; data provided as-is
+chemistry: NOT APPLICABLE
+geography: 18 GEA regions in the contiguous United States
+temporal_scope: Projections through 2050
+measurement_or_system_level: Grid scenario workbook
+original_units: DOCUMENTED IN SOURCE WORKBOOK
+acquisition_method: Official NLR Data Catalog direct download
+transformation_status: RAW_UNMODIFIED
+resource_history:
+  - resource: Cambium 2024 workbook
+    official_reference: https://data.nlr.gov/submissions/289
+    role: retained provenance; not used as the primary average-CI series
+  - resource: Cambium 2024 Scenario Viewer annual GEA export
+    official_reference: https://scenarioviewer.nlr.gov/
+    api_reference: https://scenarioviewer.nlr.gov/api/download/
+    project_uuid: 5c7bef16-7e38-4094-92ce-8b03dfa93380
+    scenario_viewer_file_id: 69141
+    role: primary average-grid-CI resource correction within the same frozen source family
+files:
+  - original_filename: 1744314776-Cambium24_Workbook.xlsx
+    file_size_bytes: 26541986
+    raw_relative_path: data/raw/SRC_CAMBIUM_2024/1744314776-Cambium24_Workbook.xlsx
+    sha256: 80E930A78640D423ACE34517EB8101A07A38B9A5C1D899E3ED33F0F63F9A63EB
+  - original_filename: Cambium24_allScenarios_annual_gea.csv
+    archival_filename: ScenarioViewer_Cambium2024_Annual_GEA_file_69141.zip
+    filename_note: API supplied no Content-Disposition filename; archival name records project and official file ID; member filename is preserved
+    archive_member: Cambium24_allScenarios_annual_gea.csv
+    file_size_bytes: 263574
+    raw_relative_path: data/raw/SRC_CAMBIUM_2024/ScenarioViewer_Cambium2024_Annual_GEA_file_69141.zip
+    sha256: B5438EE16C0CF03054BAC62520155CBFDC8E98797ABA025E48E793FB1527C189
+    official_source_url: https://scenarioviewer.nlr.gov/api/download/
+    retrieval_date: 2026-08-20
+    exact_metric: aer_load_co2e
+    selected_scenarios: [MidCase, LowRECost, HighRECost]
+    geography: all 18 GEA regions
+    calendar_years: [2025, 2030, 2035, 2040, 2045, 2050]
+    unit: kg CO2e/MWh_end-use
+    transformation_status: RAW_UNMODIFIED

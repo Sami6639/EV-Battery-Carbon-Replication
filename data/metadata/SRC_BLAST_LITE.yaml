@@ -1,0 +1,18 @@
+source_id: SRC_BLAST_LITE
+identity: NREL/National Laboratory of the Rockies BLAST-Lite
+role: CANDIDATE_CAPACITY_BRIDGE_MODEL
+repository: https://github.com/NatLabRockies/BLAST-Lite
+version: v1.1.0-12-gb093495
+commit: b093495b47dc40dd96dba865d91f553619501e94
+version_file: 1.1.0 (2025-03-27)
+license: BSD-3-Clause
+retrieval_date: 2026-08-21
+level: cell-level semi-empirical models
+chemistry: multiple; exact NMC inventory in P145S_BLAST_NMC_MODEL_ELIGIBILITY.csv
+acquisition: full official repository checkout; .git excluded from artifact inventory
+role_limits:
+  - capacity bridge candidate only after model-specific eligibility
+  - not field validation
+  - not pack validation
+  - not deterministic real-world resistance
+resistance_audit: BLAST REAL-WORLD RESISTANCE OUTPUT = NOT AVAILABLE / NOT APPROVED

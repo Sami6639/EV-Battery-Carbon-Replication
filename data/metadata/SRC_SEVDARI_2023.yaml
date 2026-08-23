@@ -1,0 +1,19 @@
+source_id: SRC_SEVDARI_2023
+source_title: Experimental validation of onboard electric vehicle chargers to improve the efficiency of smart charging operation - dataset
+doi_or_identifier: "Article 10.1016/j.seta.2023.103512; Data 10.11583/DTU.25425262.v1"
+official_source: https://data.dtu.dk/articles/dataset/25425262/1
+retrieval_date: 2026-08-20
+version: Version 1
+licence: CC BY 4.0
+acquisition_method: One controlled official Figshare version-package retry
+transformation_status: RAW_UNMODIFIED
+files:
+  - original_filename: 25425262_v1.zip
+    official_reference: https://ndownloader.figshare.com/articles/25425262/versions/1
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 1056398
+    scientific_role: Official version package containing all nine charging-conversion evidence files with original internal filenames
+    raw_relative_path: data/raw/SRC_SEVDARI_2023/25425262_v1.zip
+    sha256: 11D1284718C6AEB7CC34073BF492CB701DECB76D17B5904B76ECBFD04968B4C6
+    transformation_status: RAW_UNMODIFIED

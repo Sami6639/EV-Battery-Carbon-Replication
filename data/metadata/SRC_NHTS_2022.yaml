@@ -1,0 +1,29 @@
+source_id: SRC_NHTS_2022
+source_title: 2022 National Household Travel Survey V2.1
+authors_or_institution: Federal Highway Administration / National Household Travel Survey
+doi_or_identifier: NHTS 2022 V2.1
+official_source: https://nhts.ornl.gov/downloads
+retrieval_date: 2026-08-20
+version: V2.1
+licence: NOT VERIFIED
+chemistry: NOT APPLICABLE
+geography: United States
+temporal_scope: 2022 survey
+measurement_or_system_level: Household person vehicle trip and long-distance survey
+original_units: UNKNOWN
+acquisition_method: Official NHTS direct download
+transformation_status: RAW_UNMODIFIED
+files:
+  - original_filename: csv.zip
+    file_size_bytes: 4533528
+    raw_relative_path: data/raw/SRC_NHTS_2022/csv.zip
+    sha256: 64530C396D5F164D2259A22F7042F27BEE5147BABCD367568DDBFAFE6C8BF34C
+    archive_entry_count: 6
+    archive_entries:
+      - Citation.pdf
+      - hhv2pub.csv
+      - ldtv2pub.csv
+      - perv2pub.csv
+      - tripv2pub.csv
+      - vehv2pub.csv
+

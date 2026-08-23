@@ -1,0 +1,13 @@
+source_id: SRC_QIUSHI_WANG_2023
+identity: Wang et al. 2023, Cell Reports Physical Science 4, 101720
+article_doi: 10.1016/j.xcrp.2023.101720
+official_source: Cell Press article and supplementary landing page
+license: CC BY-NC-ND 4.0
+retrieval_date: 2026-08-21
+chemistry: LFP/graphite; 240 Ah
+level: 60 electric buses in two cities; more than four years; 0.1 Hz
+role: NON_EXECUTABLE_FIELD_METHOD_VALIDATION
+availability: public supplement reports derived statistical features; raw 240-million-row telemetry is not public
+missing_period: January-July 2020 across fleet
+local_artifact: none acquired; official download endpoint was not stably retrievable and no raw executable dataset was offered
+prohibited_roles: [NMC field validation, fitting, executable raw-data validation, resistance trajectory]

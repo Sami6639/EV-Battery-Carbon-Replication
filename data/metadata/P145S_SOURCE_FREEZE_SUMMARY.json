@@ -1,0 +1,43 @@
+{
+  "stage": "P14.5S",
+  "retrieval_date": "2026-08-21",
+  "source_count": 5,
+  "artifact_count": 260,
+  "artifact_freeze_sha256": "cee9c80d86dda80cb811a94296982ed0a060050e3575688c4da52ecbb45e6423",
+  "source_manifest_pre_append_sha256": "d2889702f49b0ece440f57915d84491908d6c8428f86d535a3695db7e79867a9",
+  "source_manifest_pre_append_line_count": 16,
+  "per_source": {
+    "SRC_BLAST_LITE": {
+      "artifact_count": 124,
+      "byte_total": 140766384,
+      "git_head": "b093495b47dc40dd96dba865d91f553619501e94",
+      "acquisition_note": "All acquired artifacts inventoried; .git internals excluded."
+    },
+    "SRC_WU_2026": {
+      "artifact_count": 63,
+      "byte_total": 28638827,
+      "git_head": "25dd34bd04c1184c22746843c909fb426af741f1",
+      "acquisition_note": "All acquired artifacts inventoried; .git internals excluded."
+    },
+    "SRC_LIU_2025": {
+      "artifact_count": 47,
+      "byte_total": 122635294,
+      "git_head": "56c1ef4dd0c5efe005368624e17a1c76a32b6c16",
+      "acquisition_note": "All acquired artifacts inventoried; .git internals excluded."
+    },
+    "SRC_DENG_2023": {
+      "artifact_count": 26,
+      "byte_total": 234904980,
+      "git_head": "36fef4bd99f626561e2d138a40ccff3d1f3ddfc2",
+      "acquisition_note": "All acquired artifacts inventoried; .git internals excluded."
+    },
+    "SRC_QIUSHI_WANG_2023": {
+      "artifact_count": 0,
+      "byte_total": 0,
+      "git_head": null,
+      "acquisition_note": "No local artifact acquired; no executable official raw-data artifact was available."
+    }
+  },
+  "scientific_bridge_implemented": "NONE",
+  "lifecycle_ghg_calculated": "NONE"
+}

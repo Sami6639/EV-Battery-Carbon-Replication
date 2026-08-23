@@ -1,0 +1,100 @@
+source_id: SRC_SCHREIBER_2025
+source_title: Automotive-grade NMC ageing and resistance dataset
+doi_or_identifier: "Article 10.1016/j.est.2025.115357; Dataset 10.14459/2024mp1755598"
+official_source: https://mediatum.ub.tum.de/1755598
+retrieval_date: 2026-08-20
+version: Updated complete dataset
+licence: CC BY 4.0
+acquisition_method: Official mediaTUM public FTP individual-file endpoints
+transformation_status: RAW_UNMODIFIED
+files:
+  - original_filename: checksums.sha512
+    official_reference: "https://mediatum.ub.tum.de/1755598 | checksums.sha512"
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 52887
+    scientific_role: Official SHA-512 integrity manifest
+    raw_relative_path: data/raw/SRC_SCHREIBER_2025/checksums.sha512
+    sha256: 66BBC76522E098D8FA75B842F7E5EC529D63A79500990BA7BA8F1BAF13EB7C7C
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: Aging_commuter_CU_0.txt
+    official_reference: "https://mediatum.ub.tum.de/1755598 | commuter_scenario/Aging_commuter_CU_0.txt"
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 45093386
+    scientific_role: Commuter baseline capacity and HPPC/DC check-up
+    raw_relative_path: data/raw/SRC_SCHREIBER_2025/commuter_scenario/Aging_commuter_CU_0.txt
+    sha256: 2A072BE1EA8F0ACB75483F357C56B20B2F73C36698CFEF1F59DF7A9760991BB6
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: Aging_commuter_CU_10.txt
+    official_reference: "https://mediatum.ub.tum.de/1755598 | commuter_scenario/Aging_commuter_CU_10.txt"
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 44351230
+    scientific_role: Fixed-grid commuter capacity and HPPC/DC check-up
+    raw_relative_path: data/raw/SRC_SCHREIBER_2025/commuter_scenario/Aging_commuter_CU_10.txt
+    sha256: 468889D5FC58D89508C565C520CB397B85AC57101ABDCB5733B9991B737E2B63
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: Aging_commuter_CU_20.txt
+    official_reference: "https://mediatum.ub.tum.de/1755598 | commuter_scenario/Aging_commuter_CU_20.txt"
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 43682476
+    scientific_role: Fixed-grid commuter capacity and HPPC/DC check-up
+    raw_relative_path: data/raw/SRC_SCHREIBER_2025/commuter_scenario/Aging_commuter_CU_20.txt
+    sha256: D0BCA6961BEB85BD2CB312E7A9EB359252902320CF1E94B82B821D4715B7C93A
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: Aging_commuter_CU_30.txt
+    official_reference: "https://mediatum.ub.tum.de/1755598 | commuter_scenario/Aging_commuter_CU_30.txt"
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 107197760
+    scientific_role: Fixed-grid commuter capacity and HPPC/DC check-up
+    raw_relative_path: data/raw/SRC_SCHREIBER_2025/commuter_scenario/Aging_commuter_CU_30.txt
+    sha256: 39045B3BA869E78A70AB3E39EA46300A7E616AF33EAC7CE93A7289A7EB1C251F
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: Aging_commuter_CU_40.txt
+    official_reference: "https://mediatum.ub.tum.de/1755598 | commuter_scenario/Aging_commuter_CU_40.txt"
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 105400058
+    scientific_role: Fixed-grid commuter capacity and HPPC/DC check-up
+    raw_relative_path: data/raw/SRC_SCHREIBER_2025/commuter_scenario/Aging_commuter_CU_40.txt
+    sha256: 4EFCE0CEC40CDBE0261F6057790A69F12D2A3D52EE4C35F3F2A0846337FAF4CF
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: Aging_commuter_CU_50.txt
+    official_reference: "https://mediatum.ub.tum.de/1755598 | commuter_scenario/Aging_commuter_CU_50.txt"
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 104546144
+    scientific_role: Fixed-grid late commuter capacity and HPPC/DC check-up
+    raw_relative_path: data/raw/SRC_SCHREIBER_2025/commuter_scenario/Aging_commuter_CU_50.txt
+    sha256: 3523533ACE189375EAD91E18E8F046A416B1B9D00D02B27E166186574B7F8885
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: Aging_highway_CU_0.txt
+    official_reference: "https://mediatum.ub.tum.de/1755598 | highway_scenario/Aging_highway_CU_0.txt"
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 45642794
+    scientific_role: Highway baseline capacity and HPPC/DC check-up
+    raw_relative_path: data/raw/SRC_SCHREIBER_2025/highway_scenario/Aging_highway_CU_0.txt
+    sha256: 196F96229835928BB4ADDE3988FDE2BBC541227F0B41C43968FC6A307840921E
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: Aging_highway_CU_11.txt
+    official_reference: "https://mediatum.ub.tum.de/1755598 | highway_scenario/Aging_highway_CU_11.txt"
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 42569075
+    scientific_role: Highway midpoint capacity and HPPC/DC check-up
+    raw_relative_path: data/raw/SRC_SCHREIBER_2025/highway_scenario/Aging_highway_CU_11.txt
+    sha256: 13CEA3D41236CFFCF57F210632DF8803C5D0033A153384FC68E012E63925BE39
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: Aging_highway_CU_22.txt
+    official_reference: "https://mediatum.ub.tum.de/1755598 | highway_scenario/Aging_highway_CU_22.txt"
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 90012687
+    scientific_role: Highway endpoint capacity and HPPC/DC check-up
+    raw_relative_path: data/raw/SRC_SCHREIBER_2025/highway_scenario/Aging_highway_CU_22.txt
+    sha256: D8C7873AB5BF1850E71CF47AF9B25B21CAA03318D7B186AC50B0FE7818440C76
+    transformation_status: RAW_UNMODIFIED

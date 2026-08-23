@@ -1,0 +1,20 @@
+source_id: SRC_LLAMAS_OROZCO_2023
+source_title: Estimating the environmental impacts of global lithium-ion battery supply chain - a temporal geographical and technological perspective
+authors_or_institution: Llamas-Orozco et al.; Figshare depositor Fanran Meng
+doi_or_identifier: Article 10.1093/pnasnexus/pgad361; Data 10.6084/m9.figshare.23454449.v2
+official_source: https://figshare.com/articles/dataset/Estimating_the_environmental_impacts_of_global_lithium-ion_battery_supply_chain_a_temporal_geographical_and_technological_perspective/23454449
+retrieval_date: 2026-08-20
+version: Version 2 published 2023-11-20
+licence: CC BY 4.0
+chemistry: NMC811 where source-supported
+geography: Global supply-chain scenarios
+temporal_scope: Prospective
+measurement_or_system_level: Pack-level battery-manufacturing GHG
+original_units: DOCUMENTED IN SOURCE WORKBOOK
+acquisition_method: Official Figshare direct download
+transformation_status: RAW_UNMODIFIED
+files:
+  - original_filename: LIBs-LCA Supplmentary tables_final_final.xlsx
+    file_size_bytes: 601886
+    raw_relative_path: data/raw/SRC_LLAMAS_OROZCO_2023/LIBs-LCA Supplmentary tables_final_final.xlsx
+    sha256: 19842D347627B95A46D1B9A0ED91C81219846651D20EB1494907A3DD4D5AE24F

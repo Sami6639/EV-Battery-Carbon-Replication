@@ -1,0 +1,73 @@
+source_id: SRC_LUH_2024
+source_title: "Comprehensive battery aging dataset: capacity and impedance fade measurements of a lithium-ion NMC/C-SiO cell"
+doi_or_identifier: "Article 10.1038/s41597-024-03831-x; Dataset 10.35097/1947"
+official_source: https://www.radar-service.eu/radar/en/dataset/zYYmSEIWMwoELRCK
+retrieval_date: 2026-08-20
+version: Original frozen dataset
+licence: CC BY 4.0
+acquisition_method: Official RADAR individual-file endpoints
+transformation_status: RAW_UNMODIFIED
+files:
+  - original_filename: "Battery Aging Data Plausibility Check v05 (colored).xlsx"
+    official_reference: https://www.radar-service.eu/radar-backend/archives/zYYmSEIWMwoELRCK/retrieveFile/KinNAvNqAnmUGPIL
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 2211741
+    scientific_role: Author plausibility and quality-context documentation
+    raw_relative_path: "data/raw/SRC_LUH_2024/Battery Aging Data Plausibility Check v05 (colored).xlsx"
+    sha256: CBF1BEB21374E49A25D58761E222BADBE4499A86581834FFAFABE0ECA099DF8E
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: cell_eocv2.zip
+    official_reference: https://www.radar-service.eu/radar-backend/archives/zYYmSEIWMwoELRCK/retrieveFile/tRlKWnIpaOUgrqEa
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 80961324
+    scientific_role: Capacity/energy SOH check-ups and exposure history for 228 cells
+    raw_relative_path: data/raw/SRC_LUH_2024/cell_eocv2.zip
+    sha256: 81C10714570DA82F99359D88B394D039F4D116F3BFB337E79D8BFDC370F7AFB3
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: cell_plsv2.zip
+    official_reference: https://www.radar-service.eu/radar-backend/archives/zYYmSEIWMwoELRCK/retrieveFile/uEtROzxMiabpTrYb
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 20815992
+    scientific_role: 10-ms and 1-s pulse resistance with SOC and temperature for 228 cells
+    raw_relative_path: data/raw/SRC_LUH_2024/cell_plsv2.zip
+    sha256: FA2B4565DE657DB37102D9068A5B897862484B290DA581602C9420E39FFE9301
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: cfg.zip
+    official_reference: https://www.radar-service.eu/radar-backend/archives/zYYmSEIWMwoELRCK/retrieveFile/spqNhBDlfJGZWpgB
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 92635
+    scientific_role: Cell identifiers, ageing conditions, C-rates, profiles and tester limits
+    raw_relative_path: data/raw/SRC_LUH_2024/cfg.zip
+    sha256: C717C812B0D5F025BC8221FC89FDDF3AF2A728895C5F2FD50F2C2FB4D1EF6F7E
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: "Cycling Experiment Cell Overview (2024-02-29 20-13).xlsx"
+    official_reference: https://www.radar-service.eu/radar-backend/archives/zYYmSEIWMwoELRCK/retrieveFile/rlySOSkzlhgBUFXd
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 253364
+    scientific_role: Experiment, cell, replicate and condition mapping
+    raw_relative_path: "data/raw/SRC_LUH_2024/Cycling Experiment Cell Overview (2024-02-29 20-13).xlsx"
+    sha256: 8A4FA215CE0AAEEACC1BF0948226E876C2422DC4F382DB22331E02F9DCD2AA95
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: "Data Structure v05.xlsx"
+    official_reference: https://www.radar-service.eu/radar-backend/archives/zYYmSEIWMwoELRCK/retrieveFile/HLndwPrRzzsGmZTv
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 184289
+    scientific_role: Original schema documentation for selected data archives
+    raw_relative_path: "data/raw/SRC_LUH_2024/Data Structure v05.xlsx"
+    sha256: 1B2F0883D47BFCA4D70AC809EE43259061815613DC0BDC8E8EF59E3FD6425CF4
+    transformation_status: RAW_UNMODIFIED
+  - original_filename: WLTP_Class_3b_cycle_power_profile.xlsx
+    official_reference: https://www.radar-service.eu/radar-backend/archives/zYYmSEIWMwoELRCK/retrieveFile/DuigxrqgfPHkOrDM
+    retrieval_date: 2026-08-20
+    licence: CC BY 4.0
+    file_size_bytes: 542561
+    scientific_role: Original WLTP ageing-profile documentation
+    raw_relative_path: data/raw/SRC_LUH_2024/WLTP_Class_3b_cycle_power_profile.xlsx
+    sha256: 4793A7A57846B51E4E8189E2E1EC33D35E3D3389F7A10CB4B0AE621F175F46B3
+    transformation_status: RAW_UNMODIFIED
