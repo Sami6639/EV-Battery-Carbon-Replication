@@ -2,7 +2,7 @@
 
 Reproducibility package for the study:
 
-**Battery Replacement as a Lifecycle Carbon Decision: Trajectory-Free Set Identification in the Same BEV**
+**Electric Vehicle Battery Replacement as a Lifecycle Carbon Decision: Trajectory-Free Set Identification for First-Life Extension**
 
 Repository: https://github.com/Sami6639/EV-Battery-Carbon-Replication
 
@@ -264,7 +264,7 @@ Scientific design decisions and validation history are documented in `docs/`.
 
 ## Associated manuscript
 
-**Battery Replacement as a Lifecycle Carbon Decision: Trajectory-Free Set Identification in the Same BEV**
+**Electric Vehicle Battery Replacement as a Lifecycle Carbon Decision: Trajectory-Free Set Identification for First-Life Extension**
 
 Journal citation and DOI will be added here after publication.
 
@@ -283,7 +283,7 @@ This research received no external funding.
 
 ## Conflict of Interest
 
-The author declares no conflict of interest.
+The author declares no competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
 
 ## Licence and reuse
 
