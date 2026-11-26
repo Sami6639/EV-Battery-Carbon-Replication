@@ -2,7 +2,7 @@
 
 ## Revised manuscript
 
-**Electric Vehicle Battery Replacement: Service Requirements, Deferral and Lifecycle Carbon Emissions**
+**Electric Vehicle Battery Replacement: Investment Timing and Life Cycle Carbon Emissions**
 
 [Download the final replication package](replication/EV_Battery_Final_Replication.zip) or [browse the analysis scripts and results](replication/revision/). The [replication instructions](replication/README.md) list the input sources, the two original laboratory files to acquire and the execution order. The package reproduces the duty curves, early replacement sensitivity, stationary storage break-even thresholds and energy-boundary checks.
 

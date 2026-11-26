@@ -1,4 +1,5 @@
-# EV battery replacement revision
+# Electric Vehicle Battery Replacement: Investment Timing and Life Cycle Carbon Emissions
+
 Run from this directory. The accompanying derived input tables make the numerical accounting independent of a remote repository. The baseline source modules are from https://github.com/Sami6639/EV-Battery-Carbon-Replication at e96c3b8ddae2a80689c3fe8493d75ab92fe251e0. Only the baseline modules used here are required.
 1. Install Python, NumPy, pandas, scipy, PyYAML, pyarrow, matplotlib and fastsim==3.0.6. The archived upstream environment is in requirements-lock.txt. The revision was run using Python 3.12 and FASTSim 3.0.6.
 2. Create raw/ and download two original files from Luh & Blank (2024), DOI 10.35097/1947, CC BY 4.0. They are cell_eocv2.zip (https://www.radar-service.eu/radar-backend/archives/zYYmSEIWMwoELRCK/retrieveFile/tRlKWnIpaOUgrqEa) and cell_plsv2.zip (https://www.radar-service.eu/radar-backend/archives/zYYmSEIWMwoELRCK/retrieveFile/uEtROzxMiabpTrYb). Store each under its original filename. audit.py verifies SHA-256 before opening either file.
