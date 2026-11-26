@@ -1,0 +1,96 @@
+stage: P12
+configuration_status: BASELINE RULE LOCK
+lock_date: 2026-08-20
+lock_timing: before calculation of any R/R0 values or inspection of degradation outcomes
+random_seed: 20260820
+
+source_roles:
+  primary_fit_source: SRC_LUH_2024
+  automotive_validation_source: SRC_SCHREIBER_2025
+  fresh_hppc_plausibility_source: SRC_TUM_ID3
+
+baseline_assessment:
+  candidate_a:
+    rule: first valid pulse-resistance check-up per cell at matched SOC and source-defined room temperature
+    assessment: selected
+    reason: directly supported by PLSV2 is_rt, soc_nom, timestamp, and source resistance definitions
+  candidate_b:
+    rule: earliest source-identified fresh-state check-up
+    assessment: not selected as a separate rule
+    reason: PLSV2 has no independent fresh-state flag; chronological first valid RT check-up is reproducible and coincides with the defensible fresh candidate without adding an unsupported label
+  candidate_c:
+    rule: use a source-provided initial resistance field
+    assessment: unavailable for the selected pulse timescales
+    reason: PLSV2 supplies current 10-ms and 1-s reference resistance but no separate initial pulse-resistance field
+
+resistance_baseline_rule:
+  rule_id: luh_same_cell_soc_rt_first_valid_v1
+  source_room_temperature_flag: is_rt == 1
+  reference_temperature_c: 25.0
+  temperature_tolerance_c: 0.5
+  allowed_soc_percent: [10, 30, 50, 70, 90]
+  pulse_state_grain: [source_filename, sd_block_id]
+  baseline_grain: [cell_key, soc_nom]
+  ordering: [timestamp_s, sd_block_id]
+  validity:
+    - finite timestamp, SOC, temperature, R10, and R1s
+    - source room-temperature flag equals 1
+    - absolute measured temperature lies within the locked tolerance
+    - both resistance values lie within the source-documented 1 to 1000 mOhm plausibility range
+  ratio_rules:
+    r10_rel: r_ref_10ms_mOhm / same-cell same-SOC baseline r_ref_10ms_mOhm
+    r1s_rel: r_ref_1s_mOhm / same-cell same-SOC baseline r_ref_1s_mOhm
+  cross_cell_baseline: prohibited
+  soc_mismatch: prohibited
+  temperature_basis_mismatch: prohibited
+  timescale_mixing: prohibited
+
+capacity_state_rule:
+  primary_field: source-supplied soh_cap
+  primary_unit: percent on the author-defined SOH scale
+  eligibility:
+    - cyc_condition == 2 (source-defined room-temperature check-up)
+    - cyc_charged == 0 (reference discharge-capacity observation)
+    - finite cap_aged_est_Ah and soh_cap
+  reconstructed_field_role: consistency and automotive-validation support only
+  reconstructed_baseline: earliest eligible measured capacity from the same cell
+  source_and_reconstructed_fields_must_remain_separate: true
+
+reporting_soc_selection:
+  method: maximize unique-cell coverage, then unique-condition coverage, then minimize missingness
+  tie_breaker: closest SOC to 50 percent for automotive relevance
+  outcome_variables_forbidden: [carbon, replacement timing, lifecycle GHG, retirement regime]
+
+candidate_representation_families:
+  - observed_nonparametric
+  - low_order_linear
+  - bounded_monotone_isotonic
+selection_priority:
+  - observed-domain fidelity
+  - zero extrapolation
+  - physical monotonicity
+  - residual behavior
+  - replicate and condition sensitivity
+  - later translation suitability
+
+exposure_axes:
+  primary_common_axis: elapsed_calendar_days_since_same_cell_baseline
+  retained_source_native_axes:
+    - charge_throughput_ah
+    - discharge_throughput_ah
+    - num_cycles_op
+    - num_cycles_checkup
+  forbidden_conversions: [Ah_to_kWh, Ah_to_km, mileage_equivalent_exposure]
+
+uncertainty:
+  probability_distribution_assumed: false
+  empirical_quantiles: [0.10, 0.50, 0.90]
+  layers: [replicate_variability, condition_variability, measurement_variability, representation_fit_uncertainty]
+
+primary_extrapolation: NONE
+forbidden_inputs:
+  - grid carbon
+  - battery manufacturing GHG
+  - replacement timing
+  - lifecycle carbon
+  - retirement regime
